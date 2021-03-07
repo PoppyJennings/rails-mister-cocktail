@@ -1,17 +1,26 @@
-<div class="container col-4 justify-content-center p-3">
-  <h1>Cocktails</h1>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://vinepair.com/wp-content/uploads/2017/11/50-best-cocktails-inside.jpg);">
+    <div class="container">
+      <h1>Your own personal cocktail list!</h1>
+      <p>Discover cocktails or add your own...</p>
+      <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-gradient" %>
+    </div>
+  </div>
 
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-      <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-trip">
+          <%= cl_image_tag cocktail.photo.key %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+              <p>Short description here!</p>
+              <%= link_to 'Delete', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <%= cl_image_tag cocktail.bartender.key, class: "card-trip-user avatar-bordered", height: 40, width: 40, crop: :fill %>
+          </div>
+        </div>
+      <% end %>
+  </div>
 
-  <%= link_to "Add a cocktail", new_cocktail_path %>
-
-<!-- app/views/articles/index.html.erb -->
-<%= cl_image_tag("joa9z4dwdpxry56cchgu",
-      width: 400, height: 300, crop: :fill) %>
 </div>
