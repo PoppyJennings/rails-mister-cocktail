@@ -1,12 +1,13 @@
 .banner {
   background-size: cover;
-  background-position: center;
+  background-position: left;
   padding: 150px 0;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
+  height: 100vh;
 }
 
 .banner h1 {
-  margin: 0;
+  margin: 10px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
@@ -18,4 +19,8 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner_button {
+  margin: 10px;
 }

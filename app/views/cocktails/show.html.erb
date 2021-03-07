@@ -4,7 +4,12 @@
   <div class="card-trip">
     <%= cl_image_tag @cocktail.photo.key %>
     <div class="card-trip-infos">
+      
+      
       <div>
+      <p>Your bartender is <%= "Poppy" %></p>
+      <%= cl_image_tag @cocktail.bartender.key, class: "card-trip-user avatar-bordered", height: 40, width: 40, crop: :fill %>
+
         <h2><%= @cocktail.name %></h2>
         <h3>
           This cocktail is made from...
@@ -16,8 +21,8 @@
         </h3>
           <%= link_to "Add some extras to this cocktail", new_cocktail_dose_path(@cocktail) %>
       </div>
-      <p class="card-trip-pricing">Your bartender is <%= "Poppy" %></p>
-      <%= cl_image_tag @cocktail.bartender.key, class: "card-trip-user avatar-bordered", height: 40, width: 40, crop: :fill %>
+      
+      
       
     </div>
   </div>

@@ -1,13 +1,13 @@
-<div class="container col-4 justify-content-center p-3">
+<div class="container p-3 center">
   <h1>Add a new cocktail!</h1>
     <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name %>
       <%= f.input :photo %>
       <%#= f.input :bartenderName %>
       <%= f.input :bartender, label: 'Show us the bartender' %>
-      <%= f.button :submit, class: "btn btn-primary btn-block" %>
+      <%= f.button :submit, class: "btn btn-primary center" %>
     <% end %>
-    <p class="basic-link p-3">
+    <p class="basic-link p-3 center">
       <%= link_to "See all cocktails", cocktails_path %>
     </p>
 </div>
